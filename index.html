@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Soheil Kafiliveyjuyeh, PhD: mixed-methods researcher for UX research and consumer insights.">
+<title>Kafiliveyjuyeh Research Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+html{color-scheme:light}body{margin:0}img{max-width:100%}
+/* Layout: research dossier. Name block, case index, then each case as a meta rail + narrative, with key findings marked like a copy editor's highlighter. */
+:root {
+  --paper: #f5f6f8;
+  --surface: #ffffff;
+  --ink: #141820;
+  --muted: #5a6373;
+  --rule: #d8dce3;
+  --accent: #1f47c7;
+  --mark: rgba(255, 214, 74, 0.55);
+  --display: "Newsreader", Georgia, "Times New Roman", serif;
+  --body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0f1217; --surface: #161a21; --ink: #e7eaf0; --muted: #9ba4b3;
+    --rule: #2a313c; --accent: #8aa8ff; --mark: rgba(255, 205, 70, 0.28);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0f1217; --surface: #161a21; --ink: #e7eaf0; --muted: #9ba4b3;
+  --rule: #2a313c; --accent: #8aa8ff; --mark: rgba(255, 205, 70, 0.28);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 64px;
+}
+.wrap { max-width: 1060px; margin: 0 auto; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 600; text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+p { margin: 0; }
+mark { background: linear-gradient(transparent 38%, var(--mark) 38%, var(--mark) 92%, transparent 92%); color: inherit; padding: 0 2px; }
+.label {
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
+}
+
+/* Header */
+header.top { padding-block: 56px 40px; border-bottom: 1px solid var(--rule); display: grid; gap: 28px; }
+.name { font-size: clamp(34px, 6vw, 56px); line-height: 1.05; }
+.role { font-family: var(--display); font-style: italic; font-size: clamp(19px, 2.6vw, 24px); color: var(--muted); margin-top: 8px; }
+.intro { max-width: 62ch; font-size: 17.5px; }
+.contact { display: flex; flex-wrap: wrap; gap: 10px 28px; font-family: var(--mono); font-size: 14px; }
+.contact span { user-select: all; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font-family: var(--mono); font-size: 12.5px; border: 1px solid var(--rule); border-radius: 999px; padding: 3px 11px; color: var(--ink); background: var(--surface); }
+
+/* Index */
+section.index { padding-block: 40px; border-bottom: 1px solid var(--rule); }
+.index h2 { font-size: 15px; font-family: var(--mono); font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 18px; }
+.index ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.index li a {
+  display: grid; grid-template-columns: 7.5rem 1fr auto; gap: 18px; align-items: baseline;
+  padding: 14px 0; border-top: 1px solid var(--rule); text-decoration: none; color: var(--ink);
+}
+.index li:last-child a { border-bottom: 1px solid var(--rule); }
+.index li a:hover .t { color: var(--accent); }
+.index .n { font-family: var(--display); font-size: 26px; font-variant-numeric: tabular-nums; line-height: 1; }
+.index .t { font-family: var(--display); font-size: 21px; line-height: 1.25; }
+.index .k { font-family: var(--mono); font-size: 12px; color: var(--muted); text-align: right; }
+
+/* Case */
+article.case { padding-block: 56px; border-bottom: 1px solid var(--rule); display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 48px; scroll-margin-top: 16px; }
+.rail { display: grid; gap: 22px; align-content: start; }
+.figure .num { font-family: var(--display); font-size: 52px; line-height: 1; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+.figure .cap { font-size: 14px; color: var(--muted); margin-top: 6px; }
+.meta { display: grid; gap: 14px; border-top: 1px solid var(--rule); padding-top: 18px; }
+.meta div { display: grid; gap: 2px; }
+.meta .v { font-size: 14.5px; }
+.body { display: grid; gap: 26px; min-width: 0; max-width: 66ch; }
+.kicker { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+.case h3 { font-size: clamp(26px, 3.4vw, 34px); line-height: 1.15; margin-top: 6px; }
+.block { display: grid; gap: 8px; }
+.block ul { margin: 0; padding-left: 1.1em; display: grid; gap: 8px; }
+.decision {
+  background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: 18px 20px; display: grid; gap: 8px;
+}
+.decision p { font-family: var(--display); font-size: 19px; line-height: 1.45; }
+
+/* Short cases */
+section.more { padding-block: 56px; border-bottom: 1px solid var(--rule); display: grid; gap: 22px; }
+.more h2 { font-size: 28px; }
+.pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.card { background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: 22px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.card h3 { font-size: 22px; line-height: 1.2; }
+.card .src { font-size: 14px; color: var(--muted); }
+.status { font-family: var(--mono); font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; border: 1px solid var(--rule); border-radius: 999px; padding: 2px 10px; justify-self: start; color: var(--muted); }
+
+/* Toolkit + footer */
+section.kit { padding-block: 48px; display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 48px; border-bottom: 1px solid var(--rule); }
+.kit h2 { font-size: 28px; }
+.kit dl { margin: 0; display: grid; gap: 16px; }
+.kit dt { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.kit dd { margin: 2px 0 0; }
+footer { padding-block: 40px 0; display: grid; gap: 10px; color: var(--muted); font-size: 14px; max-width: 70ch; }
+
+@media (max-width: 780px) {
+  article.case, section.kit { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .rail { grid-template-columns: auto minmax(0, 1fr); gap: 20px 28px; }
+  .meta { grid-column: 1 / -1; }
+  .pair { grid-template-columns: minmax(0, 1fr); }
+  .index li a { grid-template-columns: 5.5rem minmax(0, 1fr); }
+  .index .k { grid-column: 2; text-align: left; }
+}
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1 class="name">Soheil Kafiliveyjuyeh, PhD</h1>
+      <p class="role">Mixed-methods researcher for UX research and consumer insights</p>
+    </div>
+    <p class="intro">I study how people judge, trust and act on information. For six years I have run experiments, surveys, interviews and large-scale social media analysis on audiences and platforms. These case studies retell that published work the way a product or insights team would use it: the question, the method, what we found, and what to do next.</p>
+    <div class="contact">
+      <span>soheil.kafili@gmail.com</span>
+      <a href="https://www.linkedin.com/in/soheil-kafiliveyjuyeh-489245143/">LinkedIn</a>
+      <span>Wisconsin · open to Chicago, remote, relocation</span>
+    </div>
+    <div class="chips" aria-label="Methods">
+      <span class="chip">Experiments</span><span class="chip">Survey design</span><span class="chip">In-depth interviews</span><span class="chip">Social listening</span><span class="chip">Network analysis</span><span class="chip">Ethnography</span><span class="chip">Usability testing</span>
+    </div>
+  </header>
+
+  <section class="index" aria-labelledby="idx">
+    <h2 id="idx">Case studies</h2>
+    <ol>
+      <li><a href="#social-listening"><span class="n">586,736</span><span class="t">Who really drives the conversation around a brand account?</span><span class="k">Social listening</span></a></li>
+      <li><a href="#campaign-messaging"><span class="n">3</span><span class="t">What makes someone give after they said no last time?</span><span class="k">Consumer insights</span></a></li>
+      <li><a href="#newsroom-tools"><span class="n">10</span><span class="t">How professionals adopt new tools under pressure, and where the tools fail them</span><span class="k">User research</span></a></li>
+    </ol>
+  </section>
+
+  <article class="case" id="social-listening">
+    <aside class="rail">
+      <div class="figure"><div class="num">586,736</div><div class="cap">social media mentions analyzed, 2017–2024</div></div>
+      <div class="meta">
+        <div><span class="label">My role</span><span class="v">Lead author, with Lance Porter</span></div>
+        <div><span class="label">Methods</span><span class="v">Social listening, network analysis</span></div>
+        <div><span class="label">Tools</span><span class="v">Sprinklr</span></div>
+        <div><span class="label">Published</span><span class="v"><a href="https://doaj.org/article/5633031ac918414c8cb6971d68a37e28"><i>Online Media and Global Communication</i>, 2024</a></span></div>
+      </div>
+    </aside>
+    <div class="body">
+      <div>
+        <div class="kicker">Social listening · Influence mapping</div>
+        <h3>Who really drives the conversation around a brand account?</h3>
+      </div>
+      <div class="block">
+        <span class="label">The question</span>
+        <p>U.S. embassies in Israel, Iraq and Qatar post every day to large, mixed audiences on X (formerly Twitter). A communications team needs to know which outside accounts amplify, challenge or redirect those messages, because that tells them where to listen and whom to engage.</p>
+      </div>
+      <div class="block">
+        <span class="label">What we did</span>
+        <p>We collected <mark>586,736 mentions</mark> of three U.S. ambassadors' accounts over seven years using Sprinklr, then built a mention network for each country to find the accounts that sat at the center of the conversation and carried the most influence.</p>
+      </div>
+      <div class="block">
+        <span class="label">What we found</span>
+        <p>The study identified <mark>the influential figures at the center of each country's network</mark>: the outside accounts that shape how U.S. policy messages are discussed. The account that posts is only one voice in that conversation.</p>
+      </div>
+      <div class="decision">
+        <span class="label">What a team should do</span>
+        <p>Map the network before planning outreach, and do it market by market. Monitor and engage the central accounts in each market instead of reusing one playbook everywhere.</p>
+      </div>
+    </div>
+  </article>
+
+  <article class="case" id="campaign-messaging">
+    <aside class="rail">
+      <div class="figure"><div class="num">3</div><div class="cap">controlled experiments with social media fundraising campaigns</div></div>
+      <div class="meta">
+        <div><span class="label">My role</span><span class="v">Co-author on a five-person team</span></div>
+        <div><span class="label">Methods</span><span class="v">Online experiments, moderation analysis, consumer segmentation</span></div>
+        <div><span class="label">Audience</span><span class="v">Consumers exposed to environmental campaigns on social media</span></div>
+        <div><span class="label">Published</span><span class="v"><a href="https://www.informahealthcare.com/doi/abs/10.1080/02650487.2023.2226510"><i>International Journal of Advertising</i>, 2023</a></span></div>
+      </div>
+    </aside>
+    <div class="body">
+      <div>
+        <div class="kicker">Consumer insights · Message testing</div>
+        <h3>What makes someone give after they said no last time?</h3>
+      </div>
+      <div class="block">
+        <span class="label">The question</span>
+        <p>Nonprofits and brands run one campaign after another. Many people decline the first ask. Do they make up for it on the next one, and does that depend on who they are?</p>
+      </div>
+      <div class="block">
+        <span class="label">What we did</span>
+        <p>We ran three experiments built around a series of environmental fundraising campaigns on social media. We measured two traits, materialism and moral identity, and tested what happens when people are given a way to excuse their earlier refusal.</p>
+      </div>
+      <div class="block">
+        <span class="label">What we found</span>
+        <ul>
+          <li>With no excuse offered, <mark>highly materialistic consumers gave more to the next campaign</mark>, whatever their moral identity.</li>
+          <li>Less materialistic consumers gave more only when their moral identity was high.</li>
+          <li><mark>Offering an excuse shut down that make-up giving</mark> and cut donations from materialistic consumers, unless they also had high moral identity.</li>
+        </ul>
+      </div>
+      <div class="decision">
+        <span class="label">What a team should do</span>
+        <p>Segment follow-up appeals by values instead of sending one message to everyone who said no. Avoid follow-up copy that gives people an easy reason for their last refusal.</p>
+      </div>
+    </div>
+  </article>
+
+  <article class="case" id="newsroom-tools">
+    <aside class="rail">
+      <div class="figure"><div class="num">10</div><div class="cap">in-depth interviews with editors and reporters</div></div>
+      <div class="meta">
+        <div><span class="label">My role</span><span class="v">Lead author on a three-person team</span></div>
+        <div><span class="label">Methods</span><span class="v">Semi-structured interviews, thematic analysis</span></div>
+        <div><span class="label">Users</span><span class="v">Newsroom staff at popular Turkish news outlets</span></div>
+        <div><span class="label">Published</span><span class="v"><a href="https://repository.lsu.edu/manship_pubs/172"><i>Journalism Studies</i>, 2025</a></span></div>
+      </div>
+    </aside>
+    <div class="body">
+      <div>
+        <div class="kicker">User research · B2B workflow</div>
+        <h3>How professionals adopt new tools under pressure, and where the tools fail them</h3>
+      </div>
+      <div class="block">
+        <span class="label">The question</span>
+        <p>Social media tools promised newsrooms more stories, faster. How do editors and reporters with little job security actually fold these tools into their daily work, and what breaks?</p>
+      </div>
+      <div class="block">
+        <span class="label">What we did</span>
+        <p>We interviewed 10 editors and reporters at popular Turkish news outlets about their routines, then coded the interviews for recurring patterns in tool use, workload and how they saw their own jobs.</p>
+      </div>
+      <div class="block">
+        <span class="label">What we found</span>
+        <ul>
+          <li>Users described their role shifting from reporting to passing information along, <mark>"becoming aggregators rather than reporters."</mark></li>
+          <li>The tools brought in more story ideas but raised the pressure to beat competitors.</li>
+          <li>None of the outlets had a fact-checking team or verification software, so <mark>checking social media content was the biggest bottleneck</mark> in their workflow.</li>
+          <li>With little job security, staff followed the platforms' logic instead of pushing back on it.</li>
+        </ul>
+      </div>
+      <div class="decision">
+        <span class="label">What a team should do</span>
+        <p>The unmet need is verification. A product for newsrooms wins by building fast checking into the existing workflow, not by adding more sources of content.</p>
+      </div>
+    </div>
+  </article>
+
+  <section class="more" aria-labelledby="more">
+    <h2 id="more">More research</h2>
+    <div class="pair">
+      <div class="card">
+        <div class="kicker">Experiment · Trust and credibility</div>
+        <h3>Does the format of a fact-check change who trusts it?</h3>
+        <p>An online experiment comparing fact-checks that correct one claim with fact-checks that correct several, and how people's party identity shapes trust in corrections that go against their side. This is the kind of test a trust and safety or news product team can run before choosing how to display corrections.</p>
+        <p class="src">Co-author · <i>Communication Studies</i>, 2025</p>
+      </div>
+      <div class="card">
+        <div class="kicker">Ethnography · Hard-to-reach users</div>
+        <h3>How refugee families use technology in rural America</h3>
+        <p>An ethnographic case study of three multigenerational refugee families (17 people) in rural Mercer County, Pennsylvania, looking at how they use internet-connected devices to manage daily life and gain independence.</p>
+        <p class="src">Co-author · Accepted, <i>The Journal of Community Informatics</i></p>
+      </div>
+      <div class="card">
+        <div class="kicker">Usability testing · News product</div>
+        <span class="status">In progress, Nov–Dec 2026</span>
+        <h3>Can readers find stories and spot sponsored content on a news site?</h3>
+        <p>Moderated usability sessions with five readers on a news site, plus a short follow-up survey. The output will be a severity-rated list of problems and recommended product changes.</p>
+      </div>
+      <div class="card">
+        <div class="kicker">Applied analytics · Teaching</div>
+        <h3>Social listening and message testing labs</h3>
+        <p>Designed applied labs for a UW–Madison graduate course on advocacy and influence, covering stakeholder mapping, message testing and social listening in Sprinklr.</p>
+        <p class="src">Course development collaborator, 2025–present</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="kit" aria-labelledby="kit">
+    <h2 id="kit">Toolkit</h2>
+    <dl>
+      <div><dt>Research methods</dt><dd>Experiments, survey design, in-depth interviews, usability testing, ethnography, content analysis, network analysis</dd></div>
+      <div><dt>Analysis</dt><dd>Regression, ANOVA, moderation, thematic coding, sentiment and text analysis</dd></div>
+      <div><dt>Tools</dt><dd>SPSS, Stata, NVivo, MAXQDA, LIWC, SentiStrength, Sprinklr, Qualtrics, Excel</dd></div>
+      <div><dt>Recognition</dt><dd>ICA Top Faculty Paper Award (2025); 6 peer-reviewed articles; peer reviewer for the <i>International Journal of Human–Computer Interaction</i></dd></div>
+    </dl>
+  </section>
+
+  <footer>
+    <p>These case studies are based on peer-reviewed research. Some were team projects; my role is listed on each one. Full papers are available on request.</p>
+    <p>PhD, Media and Public Affairs, Louisiana State University · Assistant Professor of Communication, University of Wisconsin–Whitewater</p>
+  </footer>
+</div>
+
+</body>
+</html>
